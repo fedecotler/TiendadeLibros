@@ -3,7 +3,7 @@ import React from "react";
 export default function ItemDetail({ data = [] }) {
   return (
     <div>
-      <h2 className="text-center mt-5 mb-5">Single Product</h2>
+      <h2 className="text-center mt-5 mb-5">Libro</h2>
       <div className="container">
         <div className="card mb-3 maximo-card">
           <div className="row g-0">
