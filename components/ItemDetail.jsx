@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import ItemCount from './ItemCount.jsx';
+
+import { Link } from 'react-router-dom';
+import { useCartContext } from './CartContext.jsx'
+
 
 export default function ItemDetail({ data = [] }) {
+  const [goToCart, setGoToCart] = useState(false);
+  const { addProduct } = useCartContext();
+
+
+  const onAdd = (quantity) => {
+  setGoToCart(true);
+  addProduct(data, quantity);
+  }
+
   return (
     <div>
       <h2 className="text-center mt-5 mb-5">Libro</h2>
@@ -21,7 +35,11 @@ export default function ItemDetail({ data = [] }) {
                 <p className="card-title">Price: {data.price}$</p>
                 <p className="card-title">Category: {data.category}</p>
                 <p className="card-text">Description:{data.description}</p>
-                <button className="btn btn-primary">Add to Cart</button>
+                {
+                  goToCart
+                    ? <Link to='/cart'>Terminar compra</Link>
+                    : <ItemCount initial={1} stock={5} onAdd={onAdd} />
+                }
               </div>
             </div>
           </div>

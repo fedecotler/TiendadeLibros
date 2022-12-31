@@ -10,6 +10,10 @@ export default function Navbar() {
             Tienda de Libros
             <img src="../public/images/libro.png" className="logoLibro"></img>
           </NavLink>
+          <NavLink className="navbar-brand" to="/cart">
+            Carrito
+            {/* <img src="../public/images/carrtio.png" className="logoLibro"></img> */}
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
@@ -36,6 +40,7 @@ export default function Navbar() {
                 >
                   Productos
                 </a>
+                
                 <ul class="dropdown-menu">
                   <li>
                     <NavLink class="dropdown-item" to="/Novelas">
