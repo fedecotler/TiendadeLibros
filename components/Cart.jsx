@@ -2,8 +2,9 @@ import React from "react";
 import { useCartContext } from "./CartContext";
 import { Link } from "react-router-dom";
 import ItemCart from "./ItemCart.jsx";
-import { getFirestore } from "../node_modules/firebase/firestore";
-
+import { getFirestore } from "firebase/firestore";
+import { collection } from "firebase/firestore";
+import { addDoc } from "firebase/firestore";
 
 
 
